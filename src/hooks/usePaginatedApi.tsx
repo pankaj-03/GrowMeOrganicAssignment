@@ -38,7 +38,7 @@ export const useApi = (currentPage: number) => {
     const [totalRecords, setTotalRecords] = useState<number>(0);  //for total pages
     const [error, setError] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
-    const url = import.meta.env.VITE_API_URL;
+    const url = "https://api.artic.edu/api/v1/artworks";
 
     // const currentURL = `${url}$?page=${currentPage}`;
     const { checkedRanges, handleCheck, handleRemove } = useCheckbox()
