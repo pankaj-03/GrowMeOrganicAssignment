@@ -37,10 +37,10 @@ export const useApi = (currentPage: number) => {
     const [data, setData] = useState<TableDataInterface[]>([]);
     const [totalRecords, setTotalRecords] = useState<number>(0);  //for total pages
     const [error, setError] = useState<boolean>(false);
-    const [loading, setLoading] = useState<boolean>(false);
-    const url = "https://api.artic.edu/api/v1/artworks";
+    const [loading, setLoading] = useState<boolean>(false); 
+    const url = import.meta.env.VITE_API_URL;
 
-    // const currentURL = `${url}$?page=${currentPage}`;
+    const currentURL = `${url}$?page=${currentPage}`;
     const { checkedRanges, handleCheck, handleRemove } = useCheckbox()
     useEffect(() => {
         const source = axios.CancelToken.source(); // Create a cancel token
